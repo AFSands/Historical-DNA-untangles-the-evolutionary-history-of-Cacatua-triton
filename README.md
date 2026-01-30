@@ -1,4 +1,5 @@
-MUSEOMICS CLARIFIES INTRASPECIFIC STRUCTURE IN THE TRITON COCKATOO (CACATUA TRITON)
+Historical DNA untangles the evolutionary history and intraspecific diversity of the Triton Cockatoo (Cacatua triton) across Melanesia
+
 
 Arthur F. Sands 1 2, Astrid A.L. Andersson 1, Geraldine Lee 2, Taylor Hains 3 4, Kerry Reid 1 5, Leo Joseph 6, Caroline Dingle 1 7, Frank E. Rheindt 2, Juha Merilä 1 8
 
