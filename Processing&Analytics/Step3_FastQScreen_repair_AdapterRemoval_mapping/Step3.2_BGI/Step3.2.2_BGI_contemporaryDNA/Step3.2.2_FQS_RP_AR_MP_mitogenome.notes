@@ -1,0 +1,3 @@
+########################################################
+# NOTES: The mitochondrial DNA sequences for contemporary samples used in the associated study were provided by Sands et al. (2024) as biproduct of their study. These were processed in a similar script, but without FastQScreen and DNA repair. Additionally, the adaptors were adjusted to accommodate this contemporary DNA, which was prepared for sequencing using a different DNBseq library preparation kit than the one used for the historical material. Otherwise, mapping was done to the same mitochondrial reference genome as for the historical material. 
+#######################################################
