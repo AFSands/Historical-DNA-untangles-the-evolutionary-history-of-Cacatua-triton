@@ -1,6 +1,7 @@
-#####################################
-# NOTES: This script is run in the directory where the reference genome is placed. Occasionally, "*.fast" may be written as "*.fna".
-#####################################
+#################################################
+# NOTES: This script is run in the directory where the reference genome is placed. Occasionally, "*.fast" may be written as "*.fna". This script has been generalised, so the specific genome names require definition. 
+#################################################
+
 
 #!/bin/bash
 #SBATCH --job-name=IndexRef
