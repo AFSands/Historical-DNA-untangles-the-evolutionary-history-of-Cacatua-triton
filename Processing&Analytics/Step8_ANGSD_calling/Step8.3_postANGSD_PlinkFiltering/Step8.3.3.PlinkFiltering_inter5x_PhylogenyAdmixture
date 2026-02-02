@@ -1,0 +1,13 @@
+#################################################
+# NOTES: This script was run on an interactive node from the outputs from Step8.2.3. To produce the VCF inputs for the phylogeny (Fig. 4B) and the full admixture assessment (Fig. S2).
+#################################################
+
+
+#Plink Flitering
+module load plink/1.90b7.7
+plink --tfile triton5xinterphylo_12 --make-bed --allow-extra-chr --missing --recode --out triton5xinterphylo_12 #SNPs 10,113,614
+plink --bfile triton5xinterphylo_12 --allow-extra-chr --indep-pairwise 50 5 0.2 --out triton5xinterphylo_12
+plink --bfile triton5xinterphylo_12 --allow-extra-chr --extract triton5xinterphylo_12.prune.in --make-bed --distance triangle ibs 1-ibs allele-ct --out triton5xinterphylo_12_ldprune_PCA #SNPs 2,709,902 
+
+#IQTree/Admixture input creation
+plink --bfile triton5xinterphylo_12_ldprune_PCA --allow-extra-chr --recode vcf --out triton5xinterphylo_12_ldprune_IQTreeBEAST #SNPs 2,709,902
