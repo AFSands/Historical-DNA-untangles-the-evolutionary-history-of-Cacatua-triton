@@ -1,0 +1,177 @@
+#################################################
+# NOTES: 
+#################################################
+
+
+#!/bin/bash -l
+#SBATCH --job-name=AngsdmtDNA_L
+#SBATCH --error=%j.err
+#SBATCH --output=%j.out
+#SBATCH --account=project_2006079
+#SBATCH --partition=small
+#SBATCH --time=72:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem-per-cpu=8G
+
+module load angsd
+
+#genotype likelihood estimation
+angsd -P 12 -out AMNH619677L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH619677/AMNH619677_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH619675L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH619675/AMNH619675_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH619666L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH619666/AMNH619666_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH619656L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH619656/AMNH619656_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH619646L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH619646/AMNH619646_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH346660L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH346660/AMNH346660_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH345474L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH345474/AMNH345474_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH298670L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH298670/AMNH298670_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH266489L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH266489/AMNH266489_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH153742L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH153742/AMNH153742_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ZA9267L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ZA9267/ZA9267_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ZA9265L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ZA9265/ZA9265_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA7636L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA7636/RA7636_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208266L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208266/RA208266_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208253L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208253/RA208253_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B0098L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B0098_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B29233L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B29233_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B29234L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B29234_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B32190L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B32190_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B33619L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B33619_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B33707L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B33707_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B33735L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B33735_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B34065L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B34065_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B34084L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B34084_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B34139L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B34139_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B34631L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B34631_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B34682L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B34682_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B34879L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B34879_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B41528L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B41528_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B41529L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B41529_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B42826L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B42826_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B42870L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B42870_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B42871L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B42871_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B42904L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B42904_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B42961L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B42961_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B43003L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B43003_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B43391L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B43391_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B43392L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B43392_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B43425L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B43425_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B43561L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B43561_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B43562L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B43562_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B44275L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B44275_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B44276L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B44276_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B45009L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B45009_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B45010L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B45010_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B45033L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B45033_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B45514L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B45514_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B45515L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B45515_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B45516L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B45516_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B45517L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B45517_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B48582L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B48582_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B48686L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B48686_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B48687L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B48687_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B49784L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B49784_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B50845L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B50845_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B51063L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B51063_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B51658L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B51658_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B51667L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B51667_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B51669L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B51669_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B51702L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B51702_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B52820L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B52820_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B53100L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B53100_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B53291L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B53291_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B53583L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B53583_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B53585L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B53585_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B53586L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B53586_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B53844L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B53844_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B53845L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B53845_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B53846L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B53846_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B53982L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B53982_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54527L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54527_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54654L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54654_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54657L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54657_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54825L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54825_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54826L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54826_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54827L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54827_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54828L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54828_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54829L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54829_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54875L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54875_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54897L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54897_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54898L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54898_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54899L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54899_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B54900L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B54900_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B56137L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B56137_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B56138L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B56138_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B56139L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B56139_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B56304L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B56304_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B56946L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B56946_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B56947L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B56947_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B56960L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B56960_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57017L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57017_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57146L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57146_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57147L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57147_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57328L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57328_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57460L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57460_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57461L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57461_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57630L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57630_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57647L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57647_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57648L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57648_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57669L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57669_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57781L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57781_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57871L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57871_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B57872L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B57872_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B59003L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B59003_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B59123L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B59123_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B59459L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B59459_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B59739L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B59739_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B60344L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B60344_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B60420L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B60420_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B60554L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B60554_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out B60739L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/B60739_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out CA1L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/CA1_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out CA3L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/CA3_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out CM1L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/CM1_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out JBP209L -i /scratch/project_2006079/scc_AUSPNG_raw_data/F22FTSHMHT0382_ANIztblR/soapnuke/final_bams_mitogeno/JBP209_PE_ME_merged_sort_RG_resort_Mkdup_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH339488L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH339488/AMNH339488_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out AMNH339504L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/AMNH339504/AMNH339504_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB01453L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB01453/ANWCB01453_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB01892L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB01892/ANWCB01892_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB01976L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB01976/ANWCB01976_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB03512L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB03512/ANWCB03512_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB03679L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB03679/ANWCB03679_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB03902L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB03902/ANWCB03902_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB04968L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB04968/ANWCB04968_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB04969L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB04969/ANWCB04969_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB07562L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB07562/ANWCB07562_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB07734L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB07734/ANWCB07734_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB07735L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB07735/ANWCB07735_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB08359L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB08359/ANWCB08359_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB08443L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB08443/ANWCB08443_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB08623L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB08623/ANWCB08623_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ANWCB26674L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ANWCB26674/ANWCB26674_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out JBPEE667L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/JBPEE667/JBPEE667_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208083L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208083/RA208083_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208101L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208101/RA208101_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208108L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208108/RA208108_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208122L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208122/RA208122_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208159L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208159/RA208159_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208160L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208160/RA208160_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208162L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208162/RA208162_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208164L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208164/RA208164_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208182L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208182/RA208182_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA208236L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA208236/RA208236_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA87980L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA87980/RA87980_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RA87993L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RA87993/RA87993_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RMNHAVES87990L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RMNHAVES87990/RMNHAVES87990_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out RMNHAVES87991L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/RMNHAVES87991/RMNHAVES87991_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out SNSB101508L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/SNSB101508/SNSB101508_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out SNSB11481L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/SNSB11481/SNSB11481_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out SNSB13517L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/SNSB13517/SNSB13517_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out SNSB14592L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/SNSB14592/SNSB14592_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out WAMA29276L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/WAMA29276/WAMA29276_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+angsd -P 12 -out ZMAAVES59222L -i /scratch/project_2006079/aDNA/step6_MapDamage/withF4flag/galerita_mitogeno/ZMAAVES59222/ZMAAVES59222_PE_ME_merged_sort_RG_resort_Mkdup_sort_rescaled_finalsort.bam -doFasta 2 -doCounts 1 -trim 2 -minQ 10
+
+chmod -R 777 *
+gzip -d *.gz
+chmod -R 777 *
+
