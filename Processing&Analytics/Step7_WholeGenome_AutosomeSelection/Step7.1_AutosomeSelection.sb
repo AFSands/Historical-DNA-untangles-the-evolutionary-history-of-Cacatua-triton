@@ -1,0 +1,32 @@
+#################################################
+# NOTES: This script is run as an array job and requires a support file called "bamlist" containing specimen BAM file names to run.
+#################################################
+
+
+#!/bin/bash -l
+#SBATCH --job-name=RemoveSexContigs
+#SBATCH --output=array_job_out_%A_%a.txt
+#SBATCH --error=array_job_err_%A_%a.txt
+#SBATCH --account=project_2006079
+#SBATCH --partition=small
+#SBATCH --time=72:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem-per-cpu=16G
+#SBATCH --array=1-304
+
+module load biokit
+
+#set the input file to process
+name=$(sed -n ${SLURM_ARRAY_TASK_ID}p bamlist)
+
+samtools view -h ${name}.bam SUPER_1 SUPER_2 SUPER_3 SUPER_4 SUPER_5 SUPER_6 SUPER_7 SUPER_8 SUPER_9 SUPER_10 SUPER_11 SUPER_12 SUPER_13 SUPER_14 SUPER_15 SUPER_16 SUPER_17 SUPER_18 SUPER_19 SUPER_20 SUPER_21 SUPER_22 SUPER_23 SUPER_24 SUPER_25 SUPER_26 SUPER_27 SUPER_28 SUPER_29 SUPER_30 SUPER_31 SUPER_32 SUPER_33 SUPER_34 SUPER_35 SUPER_36 SUPER_37 SUPER_38 SUPER_39 | \
+samtools view -Sb - > ${name}_autosomes.bam
+samtools sort -m 16G -@ 8 -o ${name}_autosomes_finalsort.bam ${name}_autosomes.bam
+samtools index ${name}_autosomes_finalsort.bam
+samtools flagstat ${name}_autosomes_finalsort.bam > ${name}_autosomes_finalsort.bam.flagstat
+samtools depth ${name}_autosomes_finalsort.bam | awk '{sum+=$3; sumsq+=$3*$3} END { print "Average = ",sum/NR; print "Stdev = ",sqrt(sumsq/NR - (sum/NR)**2)}' > coverage_${name}_autosomes_finalsort.txt
+
+rm ${name}.bam
+rm ${name}.bam.bai
+rm ${name}_autosomes.bam
