@@ -1,0 +1,13 @@
+#################################################
+# NOTES: This script was run on an interactive node from the outputs from Step8.2.4. To produce the VCF inputs for the regionally weighted admixture assessment (Fig. 6a).
+#################################################
+
+
+#Plink filtering
+module load plink/1.90b7.7
+plink --tfile triton5xinterphyloSNAPP_1 --make-bed --allow-extra-chr --missing --recode --out triton5xinterphyloSNAPP_1 #SNPs 7,520,976
+plink --bfile triton5xinterphyloSNAPP_1 --allow-extra-chr --indep-pairwise 50 5 0.2 --out triton5xinterphyloSNAPP_1
+plink --bfile triton5xinterphyloSNAPP_1 --allow-extra-chr --extract triton5xinterphyloSNAPP_1.prune.in --make-bed --distance triangle ibs 1-ibs allele-ct --out triton5xinterphyloSNAPP_1_LDprune #SNPs 1,088,662 
+
+# Admixture: regionally weighted inputs
+plink --bfile triton5xinterphyloSNAPP_1_LDprune --allow-extra-chr --recode vcf --out triton5xinterphyloSNAPP_1_LDprune_Admix #SNPs 1,088,662
