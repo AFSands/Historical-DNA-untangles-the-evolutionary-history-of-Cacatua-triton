@@ -1,0 +1,7 @@
+#################################################
+# NOTES: This script was run on an interactive node from the outputs from Step8.2.3 to convert the Plink-generated VCF file to fasta format. It requires the support Python script vcf2phylip.py
+#################################################
+
+module load biopythontools
+
+python vcf2phylip.py --input triton5xinterphylo_12_ldprune_IQTreeBEAST.vcf --fasta --min-samples-locus 108
