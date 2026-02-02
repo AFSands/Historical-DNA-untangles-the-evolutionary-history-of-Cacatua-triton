@@ -1,0 +1,31 @@
+#################################################
+# NOTES: This script was run with SNPs derived from the Step8.3.3 VCF and converted to fasta file format in Step9.2.1 to create the autosomal SNP phylogeny of the associated study (Fig.4b). 
+#################################################
+
+
+#!/bin/bash
+#SBATCH --job-name=iqtree
+#SBATCH --account=project_2006079
+#SBATCH --time=12:00:00
+#SBATCH --partition=small
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=8G
+#SBATCH --mail-type=END
+#SBATCH --output output.%J
+#SBATCH --error=test.err.%J
+
+module load iqtree
+
+#Change permissions
+chmod -R 777 *
+
+#To generate a phylip with only variant sites
+iqtree2 -s triton5xinterphylo_12_ldprune_IQTreeBEAST.min108.fasta -v -m GTR+ASC -bb 10000 -bnni -st DNA -nt AUTO -wsl -redo
+#To generate a ML phylogeny of 10000 BS
+iqtree2 -s triton5xinterphylo_12_ldprune_IQTreeBEAST.min108.fasta.varsites.phy -v -m GTR+ASC -bb 10000 -bnni -st DNA -nt AUTO
+
+iqtree2 -con triton5xinterphylo_12__ldprune_IQTreeBEAST.min108.fasta.varsites.phy.ufboot -con_bl
+
+#Change permissions
+chmod -R 777 *
