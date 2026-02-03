@@ -1,0 +1,14 @@
+#################################################
+# NOTES: This script was run in an interactive node. The inputs are taken from Step8.3.6. The script prepares the input for TreeMix. It requires the support file "RegionClusters.clust" and the support Python script "plink2treemix.py".
+#################################################
+
+
+module load biokit
+module load plink/1.90b7.7
+module load biopythontools
+
+vcftools --vcf triton5xinter_TreeMix_LDprune.vcf --plink --mac 2 --remove-indels --max-alleles 2 --max-missing 1 --out triton5xinter_TreeMix_LDprune_vcffilter_TreeMix #Samples = 23, SNPs = 542,427
+plink --file triton5xinter_TreeMix_LDprune_vcffilter_TreeMix --make-bed --out triton5xinter_TreeMix_LDprune_vcffilter_TreeMix --allow-no-sex --allow-extra-chr 0
+plink --bfile triton5xinter_TreeMix_LDprune_vcffilter_TreeMix --freq --missing --within RegionClusters.clust --out triton5xinter_TreeMix_LDprune_vcffilter_TreeMix --allow-no-sex --allow-extra-chr 0
+gzip triton5xinter_TreeMix_LDprune_vcffilter_TreeMix.frq.strat
+python2 plink2treemix.py triton5xinter_TreeMix_LDprune_vcffilter_TreeMix.frq.strat.gz triton5xinter_TreeMix_LDprune_vcffilter_TreeMix.frq.gz
