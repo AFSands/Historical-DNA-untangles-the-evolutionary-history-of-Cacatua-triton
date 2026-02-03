@@ -1,0 +1,31 @@
+#################################################
+# NOTES: This script requires the support files "bam.list" and "name.list" and the support R script "jackKnife.R".
+#################################################
+
+
+#!/bin/bash -l
+#SBATCH --job-name=Abbababa
+#SBATCH --account=project_2006079
+#SBATCH --partition=small
+#SBATCH --time=72:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem-per-cpu=16G
+#SBATCH --mail-type=END
+#SBATCH --error=%j.err
+#SBATCH --output=%j.out
+
+module load angsd
+
+#run angsd
+angsd -P 8 -out Triton_ABBABABA -doAbbababa 1 -bam bam.list -doCounts 1 -rmTrans 1 -useLast 1 -enhance 1 -minMapQ 30 -minQ 30 -blockSize 50000 -nThreads 8
+
+#change permissions
+chmod -R 777 *
+
+#estimate Z score
+module load r-env/422
+Rscript jackKnife.R file=Triton_ABBABABA.abbababa indNames=name.list outfile=Triton_ABBABABA_scores
+
+#change permissions
+chmod -R 777 *
