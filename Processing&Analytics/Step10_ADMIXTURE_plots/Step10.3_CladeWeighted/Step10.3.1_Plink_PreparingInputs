@@ -1,0 +1,16 @@
+#################################################
+# NOTES: This script was run in an interactive node. The inputs are taken from Step8.3.5/8.2.5. It is there to correct a header issue in Plink outputs, which is important to run the ADMIXTURE program.
+#################################################
+
+module load plink/1.90b7.7
+
+#Change permissions
+chmod -R 777 *
+
+plink --tfile triton5xinterAdmixClades --allow-extra-chr --make-bed --recode --out triton5xinterAdmixClades #SNPs = 3,593,735
+plink --bfile triton5xinterAdmixClades --allow-extra-chr --indep-pairwise 50 5 0.2 --out triton5xinterAdmixClades
+plink --bfile triton5xinterAdmixClades --allow-extra-chr --extract triton5xinterAdmixClades.prune.in --make-bed --distance triangle ibs 1-ibs allele-ct --out triton5xinterClades_ld_Admix #SNPs = 163,486  
+sed -i 's/SUPER_//g' triton5xinterClades_ld_Admix.bim
+
+#Change permissions
+chmod -R 777 *
