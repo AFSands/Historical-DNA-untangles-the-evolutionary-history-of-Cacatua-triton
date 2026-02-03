@@ -18,7 +18,7 @@
 module load angsd
 
 #run angsd
-angsd -P 8 -out Triton_ABBABABA -doAbbababa 1 -bam bam.list -doCounts 1 -rmTrans 1 -useLast 1 -enhance 1 -minMapQ 30 -minQ 30 -blockSize 50000 -nThreads 8
+angsd -P 8 -out Triton_ABBABABA -doAbbababa 1 -bam bam.list -doCounts 1 -rmTrans 1 -useLast 1 -enhance 1 -minMapQ 30 -minQ 30 -blockSize 500000 -nThreads 8
 
 #change permissions
 chmod -R 777 *
