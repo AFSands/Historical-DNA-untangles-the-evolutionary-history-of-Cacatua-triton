@@ -1,5 +1,5 @@
 #################################################
-# NOTES: This script was run in an interactive node. The inputs are taken from Step8.3.5/8.2.5. It is there to correct a header issue in Plink outputs, which is important to run the ADMIXTURE program.
+# NOTES: This script was run in an interactive node. The inputs are taken from Step8.2.5/8.3.5. It is there to correct a header issue in Plink outputs, which is important to run the ADMIXTURE program.
 #################################################
 
 module load plink/1.90b7.7
