@@ -1,5 +1,5 @@
 #################################################
-# NOTES: This script was run in RStudio. See the associated study for information on the R version and further details. This script uses the outputs of Step12.2 to merge individual tree files into a single trees file (i.e. merging bootstrap replicates), which can be used to determine support in Step12.5.2.
+# NOTES: This script was run in RStudio. See the associated study for information on the R version and further details. This script uses the outputs of Step12.2 to merge individual tree files into a single trees file (i.e. merging bootstrap replicates), which can be used to determine support in Step12.5.2. Note that the output was manually trimmed of its header and the names of each run to be consistent with a newick *.trees file. The revised output was called "combined_m3.trees" before proceeding to Step12.5.2. 
 #################################################
 
 
